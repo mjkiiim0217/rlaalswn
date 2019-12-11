@@ -1,36 +1,36 @@
 import java.util.*;
-class OctalToHexa
+class OctoHex
 {
 	 char a[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
-	 int rem;
-	 String hexdec="";
-	 String hexadecimal(int q)
+	 int b;
+	 String hex="";
+	 String hexadecimal(int n)
 	 {   
-   	 if(q != 0)
+   	 if(n != 0)
     	 {
-		rem=q%16;
-		hexdec= a[rem] + hexdec;
-	               q= q/16;
-		 hexadecimal(q);  
+		b=n%16;
+		hex= a[b] + hex;
+	               n= n/16;
+		 hexadecimal(n);  
 	}
-        	return hexdec;
+        	return hex;
 }    
  
     public static void main(String arg[])
     {
-        OctalToHexa var=new OctalToHexa();
-        int oct, decimal=0, i=0, t;
-        Scanner sc = new Scanner(System.in);		
-        System.out.println("Enter Octal Number : ");
-        oct = sc.nextInt();				
+        OctoHex var=new OctoHex();
+        int oct, deci=0, i=0, t;
+        Scanner scanner = new Scanner(System.in);		
+        System.out.println("8진수 정수를 입력하시오 : ");
+        oct = scanner.nextInt();				
         while(oct != 0)
         {
-            decimal =decimal + (oct%10) *(int)Math.pow(8, i);
+            deci =deci + (oct%10) *(int)Math.pow(8, i);
             i++;
             oct = oct/10;
         }		     
-        String hex=var.hexadecimal(decimal); 
-        System.out.println("Hexadecimal number is :"+hex);   
+        String hex=var.hexadecimal(deci); 
+        System.out.println("16진수로 바뀐값은 :"+hex);   
     }
   
 }
